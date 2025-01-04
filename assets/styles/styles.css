@@ -2,9 +2,9 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     padding: 30px;
-}
+} */
 
 /* transition - дозволяє визначати перехідний стан між двома станами елемента
 В прикладі що нижче ми маємо зміну кольору при hover, ця зміна кольору відбувається миттєво, щоб зробити плавну зміну кольору треба використати transition
@@ -31,3 +31,42 @@ body {
     box-shadow: 0 0 10px grey;
 }
 */
+
+body {
+    background-color: black;
+}
+
+
+header {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-size: 30px;
+}
+
+.bg {
+    background-image: url('https://images.pexels.com/photos/631477/pexels-photo-631477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+h1,
+.bg {
+    transition: filter 0.5s ease-in;
+}
+
+header:hover .bg {
+    filter: blur(0);
+}
+
+header:hover h1 {
+    filter: blur(2px);
+}
